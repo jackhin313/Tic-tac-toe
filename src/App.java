@@ -91,10 +91,8 @@ public class App implements ActionListener{
                 }
             }
         }
-        if(count == 9){
-            if(result != "X" || result != "O"){
-                result = "D";
-            }
+        if(count == 9 && result == null){
+            result = "D";
         }
         if(result != null){
             win(result);
@@ -116,7 +114,7 @@ public class App implements ActionListener{
                 button[i][j].setEnabled(false);
             }
         }
-        int value = JOptionPane.showConfirmDialog(null, "Do you want to play again?", "title", JOptionPane.YES_NO_OPTION);
+        int value = JOptionPane.showConfirmDialog(null, "Do you want to play again?", "Thank you for playing", JOptionPane.YES_NO_OPTION);
         if(value == 0){
             reset();
         }
